@@ -5,6 +5,29 @@ using namespace std;
 
 fstream fout,fin;
 
+void feedback()
+{
+    cout<<"\n-------Feedback Check-------\n";
+    cout<<"\nAny feedback from customer? (yes/no)\n";
+    string feedback;
+    cin>>feedback;
+    if(feedback == "yes")
+    {
+        string survey;
+        cout<<"\nKindly give a survey: ";
+        cin.ignore(); 
+        getline(cin, survey);
+        fout.open("feedback.csv", ios::app);
+        fout<<survey<<"\n";
+        fout.close();
+        cout<<"\nFeedback report has been logged.\n";
+    }
+    else
+    {
+        cout<<"\nNThanks for contacting us.\n";
+    }
+}
+
 void error()
 {
     cout<<"\n-------Error Report-------\n";
@@ -28,7 +51,7 @@ void error()
         {
             cout<<"\nConfirming with customer...\n";
             cout<<"\nCustomer is satisfied with the resolution.\n";
-            // feedback();
+            feedback();
             break;
         }
         else
@@ -89,7 +112,7 @@ void technicalIssue()
         cout<<"\nTechnical issue has been resolved.\n";
         cout<<"\nConfirming with customer...\n";
         cout<<"\nCustomer is satisfied with the resolution.\n";
-        // feedback();
+        feedback();
     }
     else
     {
@@ -111,7 +134,7 @@ void salesIssue()
         cout<<"\nSales issue has been resolved.\n";
         cout<<"\nConfirming with customer...\n";
         cout<<"\nCustomer is satisfied with the resolution.\n";
-        // feedback();
+        feedback();
     }
     else
     {
@@ -130,7 +153,7 @@ void issue()
     {
         cout<<"\nCustomer's enquiry is being processed\n";
         cout<<"\nCustomer's enquiry has been answered.\n";
-        // feedback();
+        feedback();
     }
     else
     {
