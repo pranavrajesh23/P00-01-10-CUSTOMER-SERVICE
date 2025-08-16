@@ -1,6 +1,28 @@
 #include<iostream>
 using namespace std;
 
+void salesIssue()
+{
+    cout<<"\n-------Sales Issue Check-------\n";
+    cout<<"\nAny sales issue from customer? (yes/no)\n";
+    string sales;
+    cin>>sales;
+    if(sales == "yes")
+    {
+        cout<<"\nRedirecting to sales department...\n";
+        cout<<"\nSales department is handling the issue.\n";
+        cout<<"\nSales issue has been resolved.\n";
+        cout<<"\nConfirming with customer...\n";
+        cout<<"\nCustomer is satisfied with the resolution.\n";
+        // feedback();
+    }
+    else
+    {
+        cout<<"\nChecking on technical issue\n";
+        // technicalIssue();
+    }
+}
+
 void issue()
 {
     cout<<"\n-------Enquiry Check-------\n";
@@ -16,7 +38,7 @@ void issue()
     else
     {
         cout<<"\nChecking on sales issues\n";
-        // salesIssue();
+        salesIssue();
     }
 }
 
