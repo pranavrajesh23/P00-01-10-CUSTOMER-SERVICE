@@ -1,5 +1,44 @@
 #include<iostream>
+#include<fstream>
+#include<string>
 using namespace std;
+
+fstream fout,fin;
+
+void error()
+{
+    cout<<"\n-------Error Report-------\n";
+    string errorReport;
+    cout<<"\nPlease describe the error report: ";
+    cin.ignore(); 
+    getline(cin, errorReport);
+    fout.open("error.csv", ios::app);
+    fout<<errorReport<<"\n";
+    fout.close();
+    cout<<"\nError report has been logged.\n";
+
+    while(true)
+    {
+        cout<<"\nError is being analayzed...\n";
+        cout<<"\nSolve the issue";
+        cout<<"\nIs the issue resolved? (yes/no)\n";
+        string resolved;
+        cin>>resolved;
+        if(resolved == "yes")
+        {
+            cout<<"\nConfirming with customer...\n";
+            cout<<"\nCustomer is satisfied with the resolution.\n";
+            // feedback();
+            break;
+        }
+        else
+        {
+            cout<<"\nIssue is not resolved yet.\n";
+        }
+    }
+
+
+}
 
 void simulateIuuse()
 {
@@ -10,7 +49,7 @@ void simulateIuuse()
     if(simu == "yes")
     {
         cout<<"\nMoving on the error report\n";
-        // error();
+        error();
     }
     else
     {
