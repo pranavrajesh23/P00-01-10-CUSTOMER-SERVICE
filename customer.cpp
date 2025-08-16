@@ -1,6 +1,23 @@
 #include<iostream>
 using namespace std;
 
+void newIssue()
+{
+    cout<<"\n-------New Issue Check-------\n";
+    cout<<"\nAny new issue from customer? (yes/no)\n";
+    string newIssue;
+    cin>>newIssue;
+    if(newIssue == "yes")
+    {
+        cout<<"\nResolve the new issue\n";
+    }
+    else
+    {
+        cout<<"\nTest the new issue\n";
+    }
+    // simulateIuuse();
+}
+
 void technicalIssue()
 {
     cout<<"\n-------Technical Issue Check-------\n";
@@ -19,7 +36,7 @@ void technicalIssue()
     else
     {
         cout<<"\nChecking on sales issue\n";
-        //newIssue();
+        newIssue();
     }
 }
 
