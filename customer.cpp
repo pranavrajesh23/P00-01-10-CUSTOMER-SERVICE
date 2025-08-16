@@ -1,13 +1,32 @@
 #include<iostream>
 using namespace std;
 
+void simulateIuuse()
+{
+    cout<<"\n-------Simulating Issue-------\n";
+    cout<<"\nAny simulated issue from customer? (yes/no)\n";
+    string simu;
+    cin>>simu;
+    if(simu == "yes")
+    {
+        cout<<"\nMoving on the error report\n";
+        // error();
+    }
+    else
+    {
+        cout<<"\nNo simulated issue found.\n";
+        cout<<"\nContact customer for further assistance.\n";
+        simulateIuuse();
+    }
+}
+
 void newIssue()
 {
     cout<<"\n-------New Issue Check-------\n";
     cout<<"\nAny new issue from customer? (yes/no)\n";
-    string newIssue;
-    cin>>newIssue;
-    if(newIssue == "yes")
+    string neww;
+    cin>>neww;
+    if(neww == "yes")
     {
         cout<<"\nResolve the new issue\n";
     }
@@ -15,7 +34,7 @@ void newIssue()
     {
         cout<<"\nTest the new issue\n";
     }
-    // simulateIuuse();
+    simulateIuuse();
 }
 
 void technicalIssue()
